@@ -37,7 +37,7 @@
 ;;auto reload file:
 (global-auto-revert-mode t)
 
-(iswitchb-mode 1)
+;; (iswitchb-mode 1)
 
 (customize-variable (quote tab-stop-list))
 (custom-set-variables
@@ -47,11 +47,9 @@
  ;; If there is more than one, they won't work right.
  '(js-indent-level 2)
  '(package-selected-packages
-   (quote
-    (go-mode markdown-mode json-mode ws-trim solidity-mode)))
+   '(typescript-mode go-mode markdown-mode json-mode ws-trim solidity-mode))
  '(tab-stop-list
-   (quote
-    (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
+   '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
  '(typescript-indent-level 2))
 
 ;; untabify and delete-trailling-whitespaces on save in some mode:
@@ -74,13 +72,13 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
 
 (require 'package)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 
@@ -93,15 +91,16 @@
  ;; If there is more than one, they won't work right.
  )
 
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2))
+;; (defun my-web-mode-hook ()
+;;   "Hooks for Web mode."
+;;   (setq web-mode-markup-indent-offset 2))
 
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(setq web-mode-code-indent-offset 2)
+;; (add-hook 'web-mode-hook  'my-web-mode-hook)
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (setq web-mode-code-indent-offset 2)
 
-(require 'css-mode)
-(setq css-indent-offset 2)
+;; (require 'css-mode)
+;; (setq css-indent-offset 2)
+
